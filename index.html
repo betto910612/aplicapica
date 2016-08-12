@@ -3,15 +3,19 @@
 <head>
  <meta charset="UTF-8">
  <title>READ JSON Example (getJSON)</title>
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ <script type="text/javascript" src="jquery.min.js"></script>
  <script type="text/javascript">
- $(document).ready(function() {
- $.getJSON("http://digiseg.com.mx/appdg/proceso.php",function(result){
+ $.ajax({
+ type: "GET",
+ url: "http://digiseg.com.mx/appdg/proceso.php",
+ crossDomain: true,
+ cache: false,
+ success: function(result){
+ var result=$.parseJSON(result);
  $.each(result, function(i, field){
- $("#output").append("Title: "+ field+" "+field+"<br/>");
- console.log(field.Estado);
+ $("#output").append("Title: "+ field.Estado + " duration: "+field.Tipo+"<br/>");
  });
- });
+ }
  });
  </script>
 </head>
