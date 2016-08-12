@@ -7,19 +7,20 @@
  <script type="text/javascript">
  $.ajax({
  type: "GET",
- url: "http://digiseg.com.mx/appdg/proceso.php",
+ url: "https://digiseg.com.mx/appdg/proceso.php",
  crossDomain: true,
  cache: false,
  success: function(result){
  var result=$.parseJSON(result);
  $.each(result, function(i, field){
- $("#output").append("Title: "+ field.Estado + " duration: "+field.Tipo+"<br/>");
+ $("#output").append("Title: "+field.Estado+" duration: "+field.Tipo+"<br/>");
+ console.log(field);
  });
  }
  });
  </script>
 </head>
 <body>
- <div id="output"></div>
+ <div id="output">w</div>
 </body>
 </html>
