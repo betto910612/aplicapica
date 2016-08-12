@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
- <meta charset="UTF-8">
- <title>READ JSON Example (getJSON)</title>
- <script type="text/javascript" src="jquery.min.js"></script>
- <script type="text/javascript">
- $.ajax({
- type: "GET",
- url: "https://digiseg.com.mx/appdg/proceso.php",
- crossDomain: true,
- cache: false,
- success: function(result){
- var result=$.parseJSON(result);
- $.each(result, function(i, field){
- $("#output").append("Title: "+field.Estado+" duration: "+field.Tipo+"<br/>");
- console.log(field);
- });
- }
- });
- </script>
+	<link rel="stylesheet" type="text/css" href="vista/css/bootstrap.css">
+	<title></title>
+	<meta charset="utf-8">
 </head>
-<body>
- <div id="output">w</div>
+<body >
+	<div >
+		<div id='vistaL'>
+		<!--Contenido-->
+			<div class="page-header"><center><img src="vista/img/assets/logo.png" alt=""></center></div>
+			<div class="container">
+				<div class="row-fluid">
+					
+					<div class="col-sm-12" style='padding:60px;'>
+						<a href='perfil.html' class='col-sm-12 btn btn-primary btn-lg'>Ingresar</a>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!--pie de pagina-->
+			<center>
+			<div class="container" style='padding:60px;'>
+				<div class="row-fluid">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-2"><img src="vista/img/assets/icon1.png" alt=""></div>
+					<div class="col-sm-2"><img src="vista/img/assets/icon2.png" alt=""></div>
+					<div class="col-sm-2"><img src="vista/img/assets/icon3.png" alt=""></div>
+					<div class="col-sm-2"><img src="vista/img/assets/icon4.png" alt=""></div>
+					<div class="col-sm-2"><img src="vista/img/assets/icon5.png" alt=""></div>
+				</div>
+			</div>
+			</center>
+			
+			
+		<!--end-->
+		<span id='Mensaje'></span>
+		</div>
+	</div>
 </body>
 </html>
