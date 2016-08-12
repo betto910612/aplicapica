@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>READ JSON Example (getJSON)</title>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function() {
+ $.getJSON("http://digiseg.com.mx/appdg/proceso.php",function(result){
+ $.each(result, function(i, field){
+ $("#output").append("Title: "+ field+" "+field+"<br/>");
+ console.log(field.Estado);
+ });
+ });
+ });
+ </script>
+</head>
+<body>
+ <div id="output"></div>
+</body>
+</html>
